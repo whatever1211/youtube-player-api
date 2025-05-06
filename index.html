@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="youtube.css" rel="stylesheet" />
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <script src="script.js"></script>
+</head>
+<body>
+    <div class="title">Integrate Youtube Player API in TV360 Application</div>
+    <div class="load-bar">
+        <input type="text" id="videoInput" placeholder="Enter YouTube video ID or URL">
+        <button class="load-btn" id="loadBtn">Load</button>
+    </div>
+    <div class="container" id="container">
+        <div id="player"></div>
+        <div class="overlay"></div>
+        <div class="controls">
+            <div class="progress-container">                
+                <input type="range" id="progress" value="0" min="0" max="100">
+                <div class="timestamp" id="timeDisplay">00:00 / 00:00</div>
+            </div>
+            <div class="button-group">
+                <div id="playPauseBtn" class="icon-button">
+                    <!-- Default: Play Icon -->
+                    <svg id="playIcon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M8 5v14l11-7z"/>
+                    </svg>
+                    <svg id="pauseIcon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" style="display: none;">
+                        <path d="M6 19h4V5H6zm8-14v14h4V5h-4z"/>
+                    </svg>
+                </div>
+                <div class="icon-button">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24" fill="white">
+                        <path d="M7 9v6h4l5 5V4l-5 5H7z"/>
+                    </svg>
+                    <input type="range" id="volumeSlider" min="0" max="100" value="100" />
+                </div>                
+                <select id="playbackRate">
+                  <option value="0.25">0.25x</option>
+                  <option value="0.5">0.5x</option>
+                  <option value="1" selected>1x</option>
+                  <option value="1.5">1.5x</option>
+                  <option value="2">2x</option>
+                </select>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
