@@ -28,18 +28,18 @@ function extractVideoId(input) {
 function onLoadYoutube(id) {
     document.getElementById("container").style.display = "block";
     player = new YT.Player('player', {
-        width: '1280',
-        height: '720',
+        // width: '1280',
+        // height: '720',
         videoId: id,
         playerVars: {
             'autoplay': 1,
-            'controls': 0,
-            'enablejsapi': 1,
+            // 'controls': 0,            
+            // 'enablejsapi': 1,
             'hl': 'vi',
-            'fs': 0,
-            'iv_load_policy': 3,
-            'playsinline': 0,
-            'rel': 0
+            // 'fs': 0,
+            // 'iv_load_policy': 3,
+            'playsinline': 1,
+            // 'rel': 0
         },
         events: {
             'onReady': onPlayerReady
@@ -107,4 +107,5 @@ function formatTime(seconds) {
     const min = Math.floor(seconds / 60).toString().padStart(2, '0');
     const sec = Math.floor(seconds % 60).toString().padStart(2, '0');
     return `${min}:${sec}`;
+
 }
